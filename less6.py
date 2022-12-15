@@ -5,3 +5,15 @@
 # - A (3,6); B (2,1) -> 5,09
 # - A (7,-5); B (1,-1) -> 7,21
 
+ax = int(input('Введите число АX: '))
+ay = int(input('Введите число АY: '))
+bx = int(input('Введите число BX: '))
+by = int(input('Введите число BY: '))
+
+x = (ax- bx) * (ax- bx)
+y = (ay- by) * (ay- by)
+
+import math
+c = math.sqrt(x + y)
+
+print(f'A {ax} , {ay}; B {bx} , {by} -> {c}')

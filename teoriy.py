@@ -249,3 +249,52 @@
 # arg = 2.3 (вернется int 2.3)
 # print(f(arg))
 # print(type(f(arg)))
+
+# -------------
+
+# def f(x):
+#     if x == 1:
+#         return ' целое '
+#     elif x == 2.3:
+#         return 23
+#     else:
+#         return
+
+# import hello as h
+# print(h.f(1))
+
+
+# -------------
+
+# def new_string(symbol, count):
+#     return symbol * count
+
+# print(new_string('!', 5))  #  будет !!!!!
+# print(new_string('!'))     #  будет ошибка
+
+
+# def new_string(symbol, count = 3):
+#      return symbol * count
+
+# print(new_string(4))  #  будет умнжение 4 на 3
+
+# -------------
+
+# def concatenatio(*params):
+#     res = 0
+#     for item in params:
+#         res += item
+#     return res
+
+# print(concatenatio(1,2,3,4))
+
+# -------------
+
+# def concatenatio(*params):
+#     res: str = ""
+#     for item in params:
+#         res += item
+#     return res
+
+# print(concatenatio('a', '1'))            # -  a1
+# print(concatenatio('a', 's', 'd', 'w'))  # -  asdw

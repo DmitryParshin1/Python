@@ -201,6 +201,24 @@
 # print(text.replace('еще' , 'ЕЩЕ'))   (заменить одно слово на другое)
 
 
+#----------
+
+
+# name = 'Привет, каК ДЕла?'
+# print(name.title())       - Привет, Как Дела?
+# print(name.upper())      -  ПРИВЕТ, КАК ДЕЛА?
+# print(name.lower())      -  привет, как дела?
+
+#----------
+
+
+# first_name = 'Dima'
+# last_name = 'Parshin'
+# full_name = f"{first_name} {last_name}"
+# print(full_name)       - Dima Parshin
+
+
+
 
 #----------
 

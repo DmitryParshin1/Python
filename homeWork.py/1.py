@@ -4,15 +4,25 @@
 # 0,56 -> 11
 
 
-number = int(input('Введите число: '))
-# number = int(number)
+# number = int(input('Введите число: '))
+# # number = int(number)
+# sum = 0
+
+# while number > 0:
+#     a = number % 10
+#     sum += a
+#     number //= 10
+
+# print(sum)
+
+
+number = '0.94'
+
 sum = 0
 
-while number > 0:
-    a = number % 10
-    sum += a
-    number //= 10
+for i in number:
+    if i.isdigit():
+        sum += int(i)
 
 print(sum)
-
 

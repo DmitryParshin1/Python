@@ -80,7 +80,7 @@
 # ---------------------словари----------------------
 
 
-# dictionary = {}    # \ - печетаем с новй строки
+# dictionary = {}    # \ - печетаем с новой строки
 # dictionary = \
 #     {
 #         'up': '↑',
@@ -105,6 +105,50 @@
 #                                         # ←
 #                                         # ↓
 #                                         # →
+
+
+# -----------------
+
+
+
+# my_dict = {32:'32', 1:'один', 'ключ': 2142345, 'список': [324, 345, 543, 348]}
+
+# print(my_dict.get(2, 'нет такого ключа'))    # 2 - нет такого ключа
+# print(my_dict.get(1, 'нет такого ключа'))    # 1 - один
+
+
+# my_dict = {32:'32', 3: 45, 1:'один', 'ключ': 2142345, 'список': [324, 345, 543, 348]}
+
+# print(my_dict.get(2,0) + my_dict.get(3,0))        #  45 - будет так как во 2-м ключе нет чисел
+
+
+
+# -----------------
+
+
+
+# my_dict = {32:'32', 1:'один', 'ключ': 2142345, 'список': [324, 345, 543, 348]}
+
+# # my_dict['NEW'] = 'value'     # добавили новое значение в список
+# my_dict[32] = 'value'          # поменяли на друге значение
+
+# print(my_dict)
+
+
+
+# -----------------
+
+# my_dict = {}
+
+# num_list = '3409534095840958204368205879054872958908469181394'
+
+# for dig in num_list:
+#     my_dict[dig] = my_dict.get(dig, 0) + 1
+# print(my_dict)
+
+# {'3': 4, '4': 7, '0': 7, '9': 8, '5': 6, '8': 8, '2': 3, '6': 2, '7': 2, '1': 2}
+               
+#                прогррамма считает сколько цифр встрречается в строке
 
 
 
@@ -162,11 +206,11 @@
 
 # list1 = [1, 2, 3, 4]
 
-# list1[0] = 123     # меняет значения в сисках
+# list1[0] = 123     # меняет значения в списках
 
 # list2 = list1
 
-# list2[1] = 333    # меняет значения в сисках
+# list2[1] = 333    # меняет значения в списках
 
 # for e in list1:
 #     print(e)
@@ -177,14 +221,36 @@
 #     print(e)
 
 
-# # print(len(list1))        # len показывает длину списка
-# # print(list1.pop())       # pop удаляет последние значение
-# # print(list1)
+# print(len(list1))        # len показывает длину списка
+# print(list1.pop())       # pop удаляет последние значение
+# print(list1)
 
-# # print(len(list1))
-# # print(list1.pop(2))      # pop(2) удаляет 2 е значение значение
-# # print(list1)
-# # --------
+# print(len(list1))
+# print(list1.pop(2))      # pop(2) удаляет 2 е значение значение
+# print(list1)
+
+
+# motorcycles = ['honda' , 'yamaha', 'suzuki']
+# first_owned = motorcycles.pop(0)              # - пример, если просто pop() - удалит последний элемент в списке
+# print(f"The first motorcycles I owned was a {first_owned.title()}")    
+# --------
+
+# motorcycles = ['honda' , 'yamaha', 'suzuki', 'ducati']
+# print(motorcycles)
+
+# motorcycles.remove('ducati')     # - удаляет значение по его названию (но только первое, последующие не будут удвлены)
+# print(motorcycles)
+
+# --------
+
+# my_list = ['21', '33', 'er', '43', '34rty','11']
+# add = '-'
+
+# print(add.join(my_list))       #  21-33-er-43-34rty-11
+# print('-'.join(my_list))       #  21-33-er-43-34rty-11  (если без переменной)
+ 
+
+# --------
 
 
 # print(list1.insert(2,11))    # insert(2,11))  - добавляет в множество (после 3 множество, значение 11)
@@ -192,3 +258,53 @@
 
 # print(list1.append(11))    # append(11)  - добавляет в множество (в конец значение 11)
 # print(list1)
+
+# del - удаляет значение в списке
+# del motorcycles[0]         # del  - удалит 0 элемент в списке, значение уже нельзя будет использвать
+# print(motorcycles)
+
+
+# --------
+
+#        sort()
+
+# cars = ['bmw', 'audi', 'subaru', 'mazda', 'toyota']
+# cars.sort()              # - сортиует в алфавитном порядке
+# print(cars)
+
+
+# cars.sort(reverse=True)              # - сортиует в обратном от большего к меньшему порядке
+# print(cars)
+
+# --------
+#        reversed()  - расположение в обратном порядке
+
+# -------------------
+
+
+# players = ['123', '678', 'qwe', '567', 'fgh', 'cvb']
+# print(players[:3])   #  берет только первые 3 элемента  ['123', '678', 'qwe']
+# print(players[1:3])    # ['678', 'qwe']
+# print(players[-3:])    # ['567', 'fgh', 'cvb']
+
+# for player in players[:3]:
+#     print(player.title())
+# # 123
+# # 678
+# # Qwe
+
+
+# -------------------
+
+
+# my_foods = ['pizza', 'falafel', 'carrot cake']
+# friend_foods = my_foods[:]     # конструкция [:] сохраняяет список
+# my_foods.append('cannoli')
+# friend_foods.append('ice cream')
+
+# print("my favorite foods are:")
+# print(my_foods)      #  ['pizza', 'falafel', 'carrot cake', 'cannoli']
+
+# print("\nMy friend's favorite foods are:")
+# print(friend_foods)   # ['pizza', 'falafel', 'carrot cake', 'ice cream']
+

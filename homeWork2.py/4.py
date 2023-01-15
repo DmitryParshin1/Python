@@ -9,7 +9,7 @@ my_list = [1.1, 1.2, 3.1, 5, 10.01]
 print(my_list)
 
 
-# str(my_list).split('.')[1][0]
+# # str(my_list).split('.')[1][0]
 
 
 def sum(my_list):
@@ -20,6 +20,5 @@ def sum(my_list):
 print(f'разница: {sum(my_list)}')
 
 # не могу понять как искать 2-ю цифру, вде через слит можно, но не получается
-
 
 

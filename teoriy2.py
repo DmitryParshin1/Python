@@ -151,6 +151,34 @@
 #                прогррамма считает сколько цифр встрречается в строке
 
 
+# -----------------
+
+
+# favorite_lanuages = {
+#     'jen': 'python',
+#     'sarah': 'c',
+#     'edward': 'ruby',
+#     'phil': 'python'
+# }
+
+# for name in sorted(favorite_lanuages):                      # sorted - выводит список в алфавитном порядке
+#     print(f" \t {name}, thank you for taking the poll! ")
+
+
+# favorite_lanuages = {
+#     'jen': 'python',
+#     'sarah': 'c',
+#     'edward': 'ruby',
+#     'phil': 'python'
+# }
+
+# for lanuages in favorite_lanuages.values():       # values - выведет на экран языки (2-е значения)
+#     print(lanuages)
+
+# for lanuages in set(favorite_lanuages.values()):    # set - убирает дубликаты прри выводе
+#     print(lanuages)
+
+
 
 
 
@@ -307,4 +335,9 @@
 
 # print("\nMy friend's favorite foods are:")
 # print(friend_foods)   # ['pizza', 'falafel', 'carrot cake', 'ice cream']
+
+
+# -------------------
+
+
 

@@ -16,7 +16,8 @@
 # print(sum)
 
 
-number = '0.94'
+# number = '0.94'
+number = input('Введите число: ')
 
 sum = 0
 
@@ -25,4 +26,17 @@ for i in number:
         sum += int(i)
 
 print(sum)
+
+
+
+# number = input('Введите число: ')
+
+# summa = 0
+
+# for item in number:
+#     if item.isdigit():
+#         summa += int(item)
+
+# print(summa)
+
 

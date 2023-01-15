@@ -32,3 +32,14 @@ for n in range(1, number + 1):
 print(f' при n = {number} список ->', end='')
 print(*my_list, sep=', ')
 print(f' Сумма -> {sum(my_list)}')
+
+
+# number = int(input('введите число: '))
+
+# list = []
+
+# for item in range(1, number + 1):
+#     list.append(round((1 + 1/number)**number, 2))
+
+# print(f'Для n={number} список будет {list}')
+# print(f'сумма будет равна: {sum(list)}')

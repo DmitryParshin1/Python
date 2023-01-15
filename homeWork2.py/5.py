@@ -24,6 +24,15 @@ negaFib.append(0)
 print(f' {negaFib + fib}')
 
 
+# fibo = [1, 0 , 1]
+
+# for i in range(int(input(' Введите число: '))):
+#     fibo.insert(0, fibo[1] - fibo[0])
+#     fibo.append(fibo[-2] + fibo[-1])
+
+# print(fibo)
+
+
 
 
 

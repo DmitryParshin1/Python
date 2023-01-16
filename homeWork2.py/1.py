@@ -20,22 +20,21 @@
 # print(sum)
 
 
-# --------------------------------
 
-# list comprehension
+#  enumerate
+# -------------------------------------
 
-from random import randint as RI
 
-my_list = [RI(0,10) for x in range(10) if x%2 !=0]
-
-print(my_list)
-
-def sum(x):
-    return 
-
+my_list = []
 sum = 0
-sum += int(my_list[i])
 
-print(my_list)
+import random
+for i in range(0, 10):
+        my_list.append(random.randint(1,9))
+        if i % 2 != 0:
+            sum = sum + my_list[i]
+
+
+
+print(list(enumerate(my_list, 1)))
 print(sum)
-

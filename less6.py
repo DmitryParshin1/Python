@@ -16,4 +16,5 @@ y = (ay- by) * (ay- by)
 import math
 c = math.sqrt(x + y)
 
-print(f'A {ax} , {ay}; B {bx} , {by} -> {c}')
+print(f'A ({ax} , {ay}); B ({bx} , {by}) -> {c}')
+

@@ -18,3 +18,5 @@ c = math.sqrt(x + y)
 
 print(f'A ({ax} , {ay}); B ({bx} , {by}) -> {c}')
 
+# x = lambda ax, bx: (ax- bx)**2
+

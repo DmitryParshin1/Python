@@ -14,7 +14,7 @@ def open_file():
     global phone_book
     global path
     with open(path, 'r', encoding='UTF-8') as data: # encoding='UTF-8' формат отображения печати, что вывобитна экран
-        file = data.readline()
+        file = data.readlines()
     for contact in file:
         phone_book.append(contact.strip().split(';'))
 
@@ -45,3 +45,26 @@ def searsh_contact(find: str):
                 result.append(contact)
                 break
     return result
+
+
+def get_contact(text: str):
+    global phone_book
+    result = []
+    for i, contact in enumerate(phone_book):
+        for field in contact:
+            if text in field:
+                result.append((contact, i))
+    if len(result) > 1:
+        return False
+    else:
+        return result
+
+def delete_contact(contact: list):
+    global phone_book
+    phone_book.remove(contact)
+
+def changed_contact(index: int, new: list):
+    global phone_book
+    phone_book[index][0] = new[0] if new[0] != '' else phone_book[index][0]
+    phone_book[index][1] = new[1] if new[1] != '' else phone_book[index][1]
+    phone_book[index][2] = new[2] if new[2] != '' else phone_book[index][2]

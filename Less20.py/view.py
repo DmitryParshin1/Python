@@ -31,7 +31,6 @@ def show_contacts(phone_list: list):
     else:
         for i, contact in enumerate(phone_list, 1):
             print(f'\t{i}. {contact[0]:20} {contact[1]:20} {contact[2]:20}')
-# жалуется  на 26 строку
         print()
 
 

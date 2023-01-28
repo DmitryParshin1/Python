@@ -14,11 +14,10 @@ def start():
     return my_list
 
 def numbers():
-    return model.rep_list
+    return view.new_list
 
 def summa():
-    model.calculate
-    view.sum
+    return view.sum
 
 
 # def click():

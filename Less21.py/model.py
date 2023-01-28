@@ -4,13 +4,14 @@ def rep_list():
     return my_list
 
 
-operation = {'+': lambda x, y: x + y,
+
+def calculate(operation_1, operation_2):
+    operation = {'+': lambda x, y: x + y,
              '-': lambda x, y: x - y,
              '*': lambda x, y: x * y,
              '/': lambda x, y: x / y,}
 
-
-def calculate(operation_1, operation_2):
+    global my_list
     my_list = 0
     i = 0
     while operation_1 in my_list or operation_2 in my_list:
@@ -25,8 +26,3 @@ def calculate(operation_1, operation_2):
         calculate('*', '/')
         calculate('+','-')
     return my_list
-
-# def sum(my_list):
-#     print(f'{" ".join(my_list)} = {my_list[0]}')
-
-# print(f'{" ".join(my_list)} = {my_list[0]}')

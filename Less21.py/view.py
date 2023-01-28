@@ -1,2 +1,8 @@
-def sum(my_list):
-    print(f'{" ".join(my_list)} = {my_list[0]}')
+import model
+
+def new_list():
+    print(model.rep_list())
+
+def sum():
+    return model.calculate
+

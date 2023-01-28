@@ -1,4 +1,5 @@
 def rep_list():
+    global my_list
     my_list = my_list.replace(' ', '').replace('+', ' + ').replace('-', ' - ').replace('*', ' * ').\
     replace('/', ' / ').split()
     return my_list

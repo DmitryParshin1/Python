@@ -10,15 +10,10 @@ import view
 
 
 def start():
-    my_list = input('\n Введите выражение: \n')
-    return my_list
-
-def numbers():
-    return view.new_list
+    numbers = input('\n Введите выражение: \n')
+    print(view.new_list)
+    return numbers
 
 def summa():
     return view.sum
 
-
-# def click():
-#     view.sum

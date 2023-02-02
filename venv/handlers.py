@@ -14,7 +14,7 @@ async def mes_start(message: types.Message):
     name = message.from_user.first_name
     await message.answer(f'{name} Привет! Сегодня с тобой сыграем в конфеты! Для начала игры введи команду /new_game'
                           f' Для настройки конфет введ команду /set  укаж колчество конфет')
-    property(message.from_user.id)
+    print(message.from_user.id)
 
 
 # @dp.message_handler(commands=['help'])

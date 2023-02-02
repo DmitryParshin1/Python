@@ -23,18 +23,25 @@ sum_sweet = 0
 
 
 number = random.randint(1,2)
-if number == 1:
-    player_1
-else:
-    player_2
+# if number == 1:
+#     player_1
+# else:
+#     number == 2
+#     player_2
 
 
 while total > 0:
     if number == 1:
+        take = 0
         print(f' Ваш ход {player_1} на столе {total} конфет')
-        sum_sweet = int(input('Сколько конфет вы хотите взять? - '))
-        while sum_sweet > 28 or sum_sweet < 0 or sum_sweet > total:
-            print(' взять можно только от 1 до 28 конфет \n')
+        # sum_sweet = int(input('Сколько конфет вы хотите взять? - '))
+        while True:
+            try:
+                take = int(input('Сколько конфет вы хотите взять?: '))
+                if 0 < sum_sweet < 29:
+                    break
+            except ValueError:
+                    print(' взять можно только от 1 до 28 конфет \n')
         total = total - sum_sweet
         if total > 0:
             player_2

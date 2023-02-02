@@ -1,3 +1,6 @@
+
+my_list = 0
+
 def rep_list():
     global my_list
     my_list = my_list.replace(' ', '').replace('+', ' + ').replace('-', ' - ').replace('*', ' * ').\
@@ -13,7 +16,6 @@ def calculate(operation_1, operation_2):
              '/': lambda x, y: x / y,}
 
     global my_list
-    my_list = 0
     i = 0
     while operation_1 in my_list or operation_2 in my_list:
             if my_list[i] in [operation_1, operation_2]:

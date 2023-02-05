@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
 
 #f(x) = -12x**4*sin(cos(x)) - 18x**3+5x**2 + 10x - 30
 #4. Построить график
@@ -17,30 +12,56 @@
 # In[2]:
 
 
-import numpy as np
-import matplotlib.pyplot as plt
+import numpy as np #библиотека вычисления
+import matplotlib.pyplot as plt #библиотека графков
 
 
-# In[9]:
+# In[3]:
 
 
-a, b, c, d, e = -12, -18, 5, 10, -30
+a, b, c, d, e = -12, -18, 5, 10, -30 #коэффициенты многочлена
 
 
-# In[10]:
+# In[4]:
 
 
-limit = 100
-step = 0.01
+limit = 10 #границы отрезка с и по какой
+step = 0.001 # шаг на отрезке (точность отрезка)
+color = 'b'#начальная переменная цвета, которая будет меняться
+line_s = '-'#начальная переменная лини, которая будет меняться 
+direct_up = True
 
-
-# In[11]:
+# In[5]:
 
 
 x = np.arange(-limit, limit, step)
 
 
-# In[12]:
+# In[6]:
+
+
+def switch_color():
+    global color
+    if color == 'b': #меняем цвета в отрезках
+        color = 'r' #если синий то меняем на красный
+    else:
+        color = 'b'#если красный обратно на синий
+    return color
+
+
+# In[7]:
+
+
+def switch_line():
+    global line_s
+    if line_s == '-': #меняем линии
+        line_s = '--'#если сплошная, меняем на пунктир
+    else:
+        line_s = '-' #если пунктир, меняем на сплошную
+    return line_s
+
+
+# In[8]:
 
 
 def func(x):
@@ -48,26 +69,56 @@ def func(x):
     return graffic
 
 
-# In[23]:
+# In[11]:
 
 
-coefficients = [-12, -18, 5, 10, -30]
-roots = np.roots(coefficients)
-print(roots)
+x_change = [(-limit, 'limit')] #заполняем от мнусового значеня в виде кортежа с комментариием
+for i in range(len(x)-1): # проходимся по длине Х, работаем с индексами
+    if (func(x[i]) > 0 and func(x[i+1]) < 0) or (func(x[i]) < 0 and func(x[i+1]) > 0):
+        #проверяем на разность знака и аппендим то значение которое либо возрастает к 0, или убывает
+        x_change.append((x[i], 'zero'))
+        #x_change.append((x[i] if abs(0 - x[i]) < abs(0 - x[i+1]) esle x[i+1], 'zero'))
+    #формула на точность, чтоб прии увеличении, была ближе к нулю
+    if direct_up: #если направление возрастане
+        if func(x[i]) > func(x[i+1]): #предыдущая точка, должна быть меньше следующей
+            x_change.append((x[i], 'direct'))
+            direct_up = False #изменение направления изгиба сравниваем с друг друга
+    else:
+        if func(x[i]) < func(x[i+1]):
+            x_change.append((x[i], 'direct'))
+            direct_up = True
+        
+x_change.append((limit, 'limit'))# максимальный лимит
 
 
-# In[24]:
+# In[12]:
 
 
-min_y = min(func(x))
-print(min_y)
+for i in range(len(x_change)-1):#проходимся по графику
+    cur_x = np.arange(x_change[i][0], x_change[i+1][0] + step, step)#вычисляем каждый отрезок до 0
+    if x_change[i][1] == 'zero':#спрашиваем если индекс идек 0 то идет одна отрисовка
+        plt.rcParams['lines.linestyle'] = switch_line()
+        plt.plot(cur_x, func(cur_x), color)
+    else: #если от 0 идет то дет другая отрисовка и цвет если меняется направление
+        plt.plot(cur_x, func(cur_x), switch_color())
+roots = []#чтоб собрать корни в кучу, находятся строчные значеня        
+for x in x_change:#если есть пересечение с 0, то выводим их
+    if x[1] == 'zero':
+        roots.append(str(round(x[0], 2)))#раунд 2 знака после запятой, переводим в строку
+        plt.plot(x[0], func(x[0]), 'gx')#зеленый крестик выводим на отрезке
 
 
-# In[25]:
-
-
-plt.plot(x, func(x), 'r')
+        
+plt.rcParams['lines.linestyle'] = '-'
+plt.plot(0, 0, 'b', label='Убывание > 0')
+plt.plot(0, 0, 'r', label='Возрастание > 0')
+plt.rcParams['lines.linestyle'] = '--'
+plt.plot(0, 0, 'b', label='Убывание < 0')
+plt.plot(0, 0, 'r', label='Возрастание < 0')
+plt.title(f'Корни на промежутке [{-limit};{limit}]: {", ".join(roots)}')
 plt.grid()
+#plt.show()
+plt.legend()
 
 
 # In[ ]:
@@ -81,4 +132,5 @@ plt.grid()
 #3. Найти интервалы, на которых функция убывает - бесконечноое множество
 #6. Определить промежутки, на котором f > 0 - бесконечноое множество
 #7. Определить промежутки, на котором f < 0 - бесконечноое множество
+
 

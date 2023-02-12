@@ -1,0 +1,24 @@
+h1 {
+    color: red;
+}
+
+h2 {
+    color: rgb(10, 129, 6);
+}
+a {
+    color: rgb(185, 185, 239);
+}
+
+body {
+    background-color: black;
+    color: white;
+    width: 500px;
+    margin: auto;
+}
+.Big_size {
+    font-size: 2rem;
+}
+ul {
+    list-style: square;
+    color: darkmagenta;
+}

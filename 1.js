@@ -22,7 +22,10 @@
 
 const celsius = +prompt('Введите градусы цельсия');
 
-const furengeit = Math.round((celsius * 1.8) + 32);
+
+const furengeit = Math.round(((celsius * 1.8) + 32), 2);
+// const furengeit = (celsius * 1.8) + 32;
+// furengeit.toFixed(2)
 // Цельсий х 1,8 + 32 = Фаренгейт 
 
 alert(`Цельсий: ${celsius}, Фаренгейт: ${furengeit}`);
